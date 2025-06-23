@@ -22,6 +22,15 @@ class PendaftarController extends Controller
         ]);
     }
 
+    public function rekap()
+    {
+        $pendaftars = Pendaftar::all();
+        return view('admin.rekap', [
+            'menu' => 'dashboard',
+            'pendaftars' => $pendaftars
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

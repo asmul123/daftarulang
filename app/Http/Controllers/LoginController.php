@@ -14,6 +14,11 @@ class LoginController extends Controller
         return view('login');
     }
 
+    public function admin()
+    {
+        return view('admin.login');
+    }
+
     public function authenticate(Request $request)
     {
         // dd($request);
@@ -36,6 +41,21 @@ class LoginController extends Controller
             }
         } else {
             return redirect()->back()->with('failed', 'Nomor Pendaftaran Salah');
+        }
+    }
+
+    public function authadmin(Request $request)
+    {
+        $credentials = $request->validate([
+            'nomor_pendaftaran' => 'required',
+            'password' => 'required'
+        ]);
+                
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();                    
+            return redirect()->intended('/rekap');
+        } else {
+            return redirect()->back()->with('failed', 'Nama Pengguna atau Kata Sandi Salah');
         }
     }
 
