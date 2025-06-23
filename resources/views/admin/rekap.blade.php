@@ -110,17 +110,9 @@
                                       $file_1 = $cek_file_1->count();
                                   @endphp
                                   @if($file_1 >= 1)
-                                      <a href="{{ url('storage/'.$cek_file_1->first()->file) }}" class="badge bg-primary">
-                                        <div class="form-control-icon">
-                                            <i data-feather="eye"></i>
-                                        </div>
-                                      </a>
+                                      <a href="{{ url('storage/'.$cek_file_1->first()->file) }}" class="badge bg-primary">Lihat Berkas</a>
                                   @else
-                                      <span class="badge bg-warning">
-                                        <div class="form-control-icon">
-                                            <i data-feather="x"></i>
-                                        </div>
-                                      </span>
+                                      <span class="badge bg-warning">Belum Diunggah</span>
                                   @endif
                                 </td>
                                 <td>
@@ -129,17 +121,9 @@
                                       $file_2 = $cek_file_2->count();
                                   @endphp
                                   @if($file_2 >= 1)
-                                      <a href="{{ url('storage/'.$cek_file_2->first()->file) }}" class="badge bg-primary">
-                                        <div class="form-control-icon">
-                                            <i data-feather="eye"></i>
-                                        </div>
-                                      </a>
+                                      <a href="{{ url('storage/'.$cek_file_2->first()->file) }}" class="badge bg-primary">Lihat Berkas</a>
                                   @else
-                                      <span class="badge bg-warning">
-                                        <div class="form-control-icon">
-                                            <i data-feather="x"></i>
-                                        </div>
-                                      </span>
+                                      <span class="badge bg-warning">Belum Diunggah</span>
                                   @endif
                                 </td>
                                 <td>
@@ -148,17 +132,9 @@
                                       $file_3 = $cek_file_3->count();
                                   @endphp
                                   @if($file_3 >= 1)
-                                      <a href="{{ url('storage/'.$cek_file_3->first()->file) }}" class="badge bg-primary">
-                                        <div class="form-control-icon">
-                                            <i data-feather="eye"></i>
-                                        </div>
-                                      </a>
+                                      <a href="{{ url('storage/'.$cek_file_3->first()->file) }}" class="badge bg-primary">Lihat Berkas</a>
                                   @else
-                                      <span class="badge bg-warning">
-                                        <div class="form-control-icon">
-                                            <i data-feather="x"></i>
-                                        </div>
-                                      </span>
+                                      <span class="badge bg-warning">Belum Diunggah</span>
                                   @endif
                                 </td>
                                 <td>
@@ -167,17 +143,9 @@
                                       $file_4 = $cek_file_4->count();
                                   @endphp
                                   @if($file_4 >= 1)
-                                      <a href="{{ url('storage/'.$cek_file_4->first()->file) }}" class="badge bg-primary">
-                                        <div class="form-control-icon">
-                                            <i data-feather="eye"></i>
-                                        </div>
-                                      </a>
+                                      <a href="{{ url('storage/'.$cek_file_4->first()->file) }}" class="badge bg-primary">Lihat Berkas</a>
                                   @else
-                                      <span class="badge bg-warning">
-                                        <div class="form-control-icon">
-                                            <i data-feather="x"></i>
-                                        </div>
-                                      </span>
+                                      <span class="badge bg-warning">Belum Diunggah</span>
                                   @endif
                                 </td>
                                 <td>
@@ -186,17 +154,9 @@
                                       $file_5 = $cek_file_5->count();
                                   @endphp
                                   @if($file_5 >= 1)
-                                      <a href="{{ url('storage/'.$cek_file_5->first()->file) }}" class="badge bg-primary">
-                                        <div class="form-control-icon">
-                                            <i data-feather="eye"></i>
-                                        </div>
-                                      </a>
+                                      <a href="{{ url('storage/'.$cek_file_5->first()->file) }}" class="badge bg-primary">Lihat Berkas</a>
                                   @else
-                                      <span class="badge bg-warning">
-                                        <div class="form-control-icon">
-                                            <i data-feather="x"></i>
-                                        </div>
-                                      </span>
+                                      <span class="badge bg-warning">Belum Diunggah</span>
                                   @endif
                                 </td>
                                 <td>
@@ -205,17 +165,9 @@
                                       $file_6 = $cek_file_6->count();
                                   @endphp
                                   @if($file_6 >= 1)
-                                      <a href="{{ url('storage/'.$cek_file_6->first()->file) }}" class="badge bg-primary">
-                                        <div class="form-control-icon">
-                                            <i data-feather="eye"></i>
-                                        </div>
-                                      </a>
+                                      <a href="{{ url('storage/'.$cek_file_6->first()->file) }}" class="badge bg-primary">Lihat Berkas</a>
                                   @else
-                                      <span class="badge bg-warning">
-                                        <div class="form-control-icon">
-                                            <i data-feather="x"></i>
-                                        </div>
-                                      </span>
+                                      <span class="badge bg-warning">Belum Diunggah</span>
                                   @endif
                                 </td>
                                 <td>
@@ -224,17 +176,9 @@
                                       $file_7 = $cek_file_7->count();
                                   @endphp
                                   @if($file_7 >= 1)
-                                      <a href="{{ url('storage/'.$cek_file_7->first()->file) }}" class="badge bg-primary">
-                                        <div class="form-control-icon">
-                                            <i data-feather="eye"></i>
-                                        </div>
-                                      </a>
+                                      <a href="{{ url('storage/'.$cek_file_7->first()->file) }}" class="badge bg-primary">Lihat Berkas</a>
                                   @else
-                                      <span class="badge bg-warning">
-                                        <div class="form-control-icon">
-                                            <i data-feather="x"></i>
-                                        </div>
-                                      </span>
+                                      <span class="badge bg-warning">Belum Diunggah</span>
                                   @endif
                                 </td>
                             </tr>
