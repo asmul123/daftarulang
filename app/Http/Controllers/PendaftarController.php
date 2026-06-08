@@ -15,7 +15,7 @@ class PendaftarController extends Controller
      */
     public function index()
     {
-        $pendaftar = Pendaftar::where('nomor_pendaftaran', auth()->user()->nomor_pendaftaran)->first();
+        $pendaftar = Pendaftar::where('nisn', auth()->user()->nomor_pendaftaran)->first();
         return view('pendaftar', [
             'menu' => 'dashboard',
             'pendaftar' => $pendaftar

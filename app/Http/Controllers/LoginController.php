@@ -22,9 +22,9 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         // dd($request);
-        $cekpendaftar =Pendaftar::where('nomor_pendaftaran', $request->nomor_pendaftaran)->count();
+        $cekpendaftar =Pendaftar::where('nisn', $request->nomor_pendaftaran)->count();
         if ($cekpendaftar >= 1){
-            $tanggal_lahir = Pendaftar::where('nomor_pendaftaran', $request->nomor_pendaftaran)->first()->tanggal_lahir;
+            $tanggal_lahir = Pendaftar::where('nisn', $request->nomor_pendaftaran)->first()->tanggal_lahir;
             if ($tanggal_lahir == $request->tanggal_lahir){
                 $credentials = $request->validate([
                     'nomor_pendaftaran' => 'required',

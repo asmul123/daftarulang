@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Daftar Ulang - SPMB SMKN 1 GARUT 2025</title>
+    <title>Portal Daftar Ulang - SPMB SMKN 1 GARUT 2026</title>
     
     <link rel="stylesheet" href="{{ url('/') }}/assets/css/bootstrap.css">
     
@@ -62,14 +62,14 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Biodata Calon Murid</h4>
+        <h4 class="card-title">Biodata Murid Baru</h4>
       </div>
       <div class="card-content">
         <div class="card-body">
           <table class="table table-borderless">
             <tbody>
               <tr>
-                <td>Nomor Pendaftaran</td>
+                <td>NISN</td>
                 <td>:</td>
                 <td>{{ auth()->user()->nomor_pendaftaran; }}</td>
               </tr>
@@ -83,18 +83,15 @@
                 <td>:</td>
                 <td>{{ $pendaftar->asal_sekolah; }}</td>
               </tr>
-              @php
-                $diterimadi = explode(" - ", $pendaftar->pilihan_diterima);                
-              @endphp
               <tr>
                 <td>Jalur Pendaftaran</td>
                 <td>:</td>
-                <td>{{ $diterimadi['2']; }}</td>
+                <td>{{ $pendaftar->pilihan_jalur; }}</td>
               </tr>
               <tr>
-                <td>Pilihan Program Keahlian</td>
+                <td>Diterima Pada Program Keahlian</td>
                 <td>:</td>
-                <td>{{ $diterimadi['1']; }}</td>
+                <td>{{ $pendaftar->pilihan_diterima; }}</td>
               </tr>
             </tbody>
           </table>
@@ -121,7 +118,7 @@
                     <tbody>
                       <tr>
                         <td>1</td>
-                        <td>BUKTI PENDAFTARAN</td>
+                        <td>SURAT KETERANGAN LULUS DARI SMP/MTs ASAL</td>
                         <td>
                           @php
                           $upload = 0;
@@ -156,7 +153,7 @@
                                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="myModalLabel1">Unggah Bukti Pendaftaran</h5>
+                                            <h5 class="modal-title" id="myModalLabel1">Unggah Scan Surat Keterangan Lulus dari SMP/MTs Asal</h5>
                                             <button type="button" class="close rounded-pill" data-dismiss="modal" aria-label="Close">
                                                 <i data-feather="x"></i>
                                             </button>
@@ -199,7 +196,7 @@
                       </tr>
                       <tr>
                         <td>2</td>
-                        <td>BUKTI KELULUSAN</td>
+                        <td>BUKTI KELULUSAN SMPB MAUNG</td>
                         <td>
                           @php
                           $cek_file_2 = App\Models\File::where('user_id', auth()->user()->id)->where('jenis_file', '2');
@@ -303,7 +300,6 @@
                             Unggah
                             </button>
                           @endif
-
                             <!--Basic Modal -->
                             <div class="modal fade text-left" id="persyaratan-3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
                             aria-hidden="true">
@@ -507,7 +503,7 @@
                       </tr>
                       <tr>
                         <td>6</td>
-                        <td>PAS PHOTO LATAR BELAKANG MERAH (MENGGUNAKAN SERAGAM SMP)</td>
+                        <td>PAS PHOTO LATAR BELAKANG BIRU (MENGGUNAKAN SERAGAM SMP/MTS)</td>
                         <td>
                           @php
                           $cek_file_6 = App\Models\File::where('user_id', auth()->user()->id)->where('jenis_file', '6');
@@ -562,7 +558,7 @@
                                                             </label>                                                    
                                                           </div>
                                                         </div>
-                                                        *pdf/gambar max (2 MB)
+                                                        *gambar max (2 MB)
                                                 </div>
                                             </div>
                                           </div>
@@ -582,93 +578,18 @@
                             </div>
                         </td>
                       </tr>
+                      @if ($upload == 6)
+                      @php
+                        $prodi = App\Models\Wag::where('program_keahlian', $diterimadi['1'])->first()->wag;
+                      @endphp
                       <tr>
-                        <td>7</td>
-                        <td>SURAT PERNYATAAN DITANDA TANGAN DI ATAS MATERAI </td>
-                        <td>
-                          @php
-                          $cek_file_7 = App\Models\File::where('user_id', auth()->user()->id)->where('jenis_file', '7');
-                          $file_7 = $cek_file_7->count();
-                          @endphp
-                          @if($file_7 >= 1)
-                          @php $upload++; @endphp
-                            <a href="{{ url('storage/'.$cek_file_7->first()->file) }}" class="badge bg-primary">Lihat Berkas</a>
-                          @else
-                            <span class="badge bg-warning">Belum Diunggah</span>
-                          @endif
-                        </td>
-                        <td>
-                          <!-- Button trigger for basic modal -->
-                          @if($file_7 >= 1)
-                          @php                          
-                          $file_7_id = $cek_file_7->first()->id;
-                          @endphp
-                            <a href="{{ url('/pendaftar/create?act=hapus&id='.$file_7_id) }}" class="btn btn-outline-danger block" onclick="return confirm('Yakin Akan Menghapus Berkas')">
-                            Hapus
-                            </a>
-                          @else
-                            <button type="button" class="btn btn-outline-primary block" data-toggle="modal" data-target="#persyaratan-7">
-                            Unggah
-                            </button>
-                          @endif
-
-                            <!--Basic Modal -->
-                            <div class="modal fade text-left" id="persyaratan-7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
-                            aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="myModalLabel1">Unggah Surat Pernyataan</h5>
-                                            <button type="button" class="close rounded-pill" data-dismiss="modal" aria-label="Close">
-                                                <i data-feather="x"></i>
-                                            </button>
-                                        </div>
-                                        <form class="form form-horizontal" method="POST" action={{ url('/pendaftar') }} enctype="multipart/form-data">
-                                        <div class="modal-body">
-                                            @csrf
-                                            <div class="row">
-                                                <div class="col-md-12 mb-1">
-                                                    <div class="input-group mb-3">
-                                                        <span class="input-group-text" id="inputGroupFileAddon01"><i data-feather="upload"></i></span>
-                                                        <div class="form-file">
-                                                            <input type="hidden" name="jenis_file" value="7">
-                                                            <input type="file" class="form-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="file">
-                                                            <label class="form-file-label" for="inputGroupFile01">
-                                                                <span class="form-file-text">Pilih Berkas...</span>
-                                                                <span class="form-file-button">Jelajahi</span>
-                                                            </label>                                                    
-                                                          </div>
-                                                        </div>
-                                                        <a href="{{ url('assets/files/') }}/SURAT PERNYATAAN KESIAPAN ORANGTUA SISWA BARU.pdf" target="_blank">Unduh Format</a>
-                                                        <br>*pdf/gambar max (2 MB)
-                                                </div>
-                                            </div>
-                                          </div>
-                                          <div class="modal-footer">
-                                            <button type="button" class="btn" data-dismiss="modal">
-                                              <i class="bx bx-x d-block d-sm-none"></i>
-                                              <span class="d-none d-sm-block">Close</span>
-                                            </button>
-                                            <button type="submit" class="btn btn-primary ml-1">
-                                              <i class="bx bx-check d-block d-sm-none"></i>
-                                              <span class="d-none d-sm-block">Unggah</span>
-                                            </button>
-                                          </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
+                        <td colspan="2">LINK GRUP WA PROGRAM KEAHLIAN</td>
+                        <td COLSPAN="2"><a href="{{ $prodi }}" target="_blank" class="btn btn-success">Masuk Ke Grup WA</a></td>                          
                       </tr>
+                      @endif
                     </tbody>
                   </table>
                 </div>                
-                  @if ($upload == 7)
-                  @php
-                    $prodi = App\Models\Wag::where('program_keahlian', $diterimadi['1'])->first()->wag;
-                  @endphp
-                  <div><a href="{{ $prodi }}" target="_blank" class="badge bg-success float">Masuk Ke Grup WA</a></div>
-                  @endif
               </div>
             </div>
           </div>

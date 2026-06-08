@@ -1,7 +1,7 @@
 @php
 // require "../function.php";
 $gNow = date('Y-m-d H:i:s');
-$date = "2025-06-20 09:00:00";
+$date = "2026-06-09 08:00:00";
 @endphp
 @if($date <= $gNow)
 <script>
@@ -19,18 +19,18 @@ $date = "2025-06-20 09:00:00";
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
+  <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Maundy - v2.0.0
@@ -48,9 +48,9 @@ $date = "2025-06-20 09:00:00";
 
       <h1>PORTAL DAFTAR ULANG</h1>
       <h2>CALON MURID BARU</h2>
-      <h2>TAHUN PELAJARAN 2025/2026</h2>
+      <h2>TAHUN PELAJARAN 2026/2027</h2>
       <h4>Dapat di buka dalam :</h4>
-      <div class="countdown d-flex justify-content-center" data-count="2025/06/20 09:00:00">
+      <div class="countdown d-flex justify-content-center" data-count="2026/06/09 08:00:00">
         <div>
           <h3>%D</h3>
           <h4>Hari</h4>
@@ -90,14 +90,14 @@ $date = "2025-06-20 09:00:00";
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/jquery-countdown/jquery.countdown.min.js"></script>
+  <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('assets/vendor/jquery-countdown/jquery.countdown.min.js') }}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/maincd.js"></script>
+  <script src="{{ asset('assets/js/maincd.js') }}"></script>
 
 </body>
 

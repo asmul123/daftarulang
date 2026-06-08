@@ -1,3 +1,13 @@
+@php
+// require "../function.php";
+$gNow = date('Y-m-d H:i:s');
+$date = "2026-06-09 08:00:00";
+@endphp
+@if($date >= $gNow)
+<script>
+	document.location.href="{{ url('/') }}";
+</script>
+@endif
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,9 +43,9 @@
                     <form action="{{ url('/login') }}" method="post">
                         @csrf
                         <div class="form-group position-relative has-icon-left">
-                            <label for="nomor_pendaftaran">Nomor Pendaftaran</label>
+                            <label for="nomor_pendaftaran">NISN</label>
                             <div class="position-relative">
-                                <input type="text" class="form-control" id="nomor_pendaftaran" name="nomor_pendaftaran" placeholder="20209201-0-00000">
+                                <input type="text" class="form-control" id="nomor_pendaftaran" name="nomor_pendaftaran" placeholder="0000000000">
                                 <div class="form-control-icon">
                                     <i data-feather="user"></i>
                                 </div>
