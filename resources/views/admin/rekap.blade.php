@@ -105,7 +105,7 @@
                                 <td>{{ $pendaftar->kontak_alternatif }}</td>
                                 <td>
                                   @php
-                                      $user_id = App\Models\User::where('nomor_pendaftaran', $pendaftar->nomor_pendaftaran)->first()->id;
+                                      $user_id = App\Models\User::where('nomor_pendaftaran', $pendaftar->nisn)->first()->id;
                                       $cek_file_1 = App\Models\File::where('user_id', $user_id)->where('jenis_file', '1');
                                       $file_1 = $cek_file_1->count();
                                   @endphp
